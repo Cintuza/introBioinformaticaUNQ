@@ -42,3 +42,36 @@ diversidades no contamos, aún hoy en día, con igualdad de oportunidades. Y aú
 apropiación del trabajo de las mujeres y diversidades por parte de los varones, sin darle ningún mérito. Reconocer esta 
 realidad de desigualdad es la única forma de encontrar soluciones reales en la sociedad patriarcal en la que nos 
 desarrollamos.
+
+### DESAFÍO V
+Escribí un scrip en Python que prediga la estructura secundaria que adoptará cada residuo (aminoácido) de la secuencia 
+proteica dada, especificandola como H (si es una hélice), B (si es una hoja beta plegada) y L (si es un bucle o loop).
+
+#### PREGUNTAS DISPARADORAS: 
+¿Qué inputs tendría tu programa? ¿De qué modo se te ocurre configurar el output? ¡Guardate esta idea, la vamos a usar 
+más adelante!
+
+El input debería ser una representación del aminoácido; podría ser un string con el código del mismo. Si el output debe 
+ser algo similar a una imagen o una representación gráfica de la estructura, podría ser una imagen hecha con caracteres.
+
+#### PARA PENSAR: 
+¿Cuántas proteínas puede sintetizar un organismo? ¿De qué depende la cantidad y la característica de las proteínas que 
+puede sintetizar un organismo?
+
+La síntesis de proteínas y su cantidad depende de las proteínas que pueda construir el ADN con la ayuda del ARN.
+
+### DESAFÍO VI
+¿Qué hace distintos a dos individuos de una especie? Propone una forma de corroborar tu respuesta realizando un 
+diagrama de un posible método computacional para dicho fin.
+
+Lo que hace diferentes a dos individuos son cadenas de ADN diferentes. Teniendo en cuenta la estructura primaria del 
+ADN, que sería la secuencia de nucléotidos de una sola de las hebras o cadenas, se me ocurre que tomando 
+desde el inicio ambas secuencias haría una comparación elemento por elemento (es decir, nucleótido por nucleótido) 
+en orden; si en algún momento los dos elementos son diferentes, entonces los individuos son distintos.
+
+#### PREGUNTAS DISPARADORAS: 
+¿Qué información deberías tener? ¿De qué modo deberías expresar dicha información para el análisis?
+
+Debería tener la secuencia de nucleótidos de una cadena de ADN. La forma de representar estos elementos depende de 
+la profundidad de la información que se quiera obtener; a un nivel muy básico, una lista de strings donde cada 
+cadena de caracteres represente un nucleótido quizás alcance.
