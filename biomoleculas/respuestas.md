@@ -47,6 +47,8 @@ desarrollamos.
 Escribí un scrip en Python que prediga la estructura secundaria que adoptará cada residuo (aminoácido) de la secuencia 
 proteica dada, especificandola como H (si es una hélice), B (si es una hoja beta plegada) y L (si es un bucle o loop).
 
+[Resuelto en estructuraSecundariaAminoacido.py](estructuraSecundariaAminoacido.py)
+
 #### PREGUNTAS DISPARADORAS: 
 ¿Qué inputs tendría tu programa? ¿De qué modo se te ocurre configurar el output? ¡Guardate esta idea, la vamos a usar 
 más adelante!
