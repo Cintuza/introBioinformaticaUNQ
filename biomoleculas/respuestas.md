@@ -78,6 +78,13 @@ Debería tener la secuencia de nucleótidos de una cadena de ADN. La forma de re
 la profundidad de la información que se quiera obtener; a un nivel muy básico, una lista de strings donde cada 
 cadena de caracteres represente un nucleótido quizás alcance.
 
+### Desafío VII
+Dado: Un máximo de 15 identificadores de la base de datos de proteínas UniProt; 
+Retornar: Para cada proteína que posea el motivo de N-glicosilación, imprimir su identificador de acceso seguido de 
+una lista de posiciones en la secuencia de la proteína donde se encuentra el motivo.
+
+[Resuelto en posicionesDeMotivos.py](posicionesDeMotivos.py)
+
 ### Desafío VIII
 Dada la siguiente lista de sequencias, realizar el una representación Logo.
 
