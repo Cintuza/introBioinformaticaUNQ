@@ -77,3 +77,13 @@ en orden; si en algún momento los dos elementos son diferentes, entonces los in
 Debería tener la secuencia de nucleótidos de una cadena de ADN. La forma de representar estos elementos depende de 
 la profundidad de la información que se quiera obtener; a un nivel muy básico, una lista de strings donde cada 
 cadena de caracteres represente un nucleótido quizás alcance.
+
+### Desafío VIII
+Dada la siguiente lista de sequencias, realizar el una representación Logo.
+
+[`MLPGLALLLLAAWTMRALEVPTDGNAPLLVEPQIAMFCGRLNMHMNVQNGKWDSDPSGTKTCIDTKEGILQYCQEVYPELQITNVVEANQPVTIQNWCKRGRAQCKTHPHFVIPYRCLVGEFVSDALLAPDKCKFLHQERMDVCETHLHWHTV`, 
+`MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLNMHMNVQNGKWDSDPSGTKTCIDTKEGILQYCQEVYPELQITNVVEANQPVTIQNWCKRGRKQCKTHPHFVIPYRCLVGEFVSDALLVPDKCKFLHQERMDVCETHLHWHTV`, 
+`MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLNMHMNVQNGKWDSDPSGTKTCIDTKEGILQYCQEVYPELQITNVVEANQPVTIQNWCKRGRKQCKTHPHFVIPYRCLVGEFVSDALLVPDKCKFLHQERMDVCETHLHWHTV`]
+
+[Resuelto en representarListaDeSecuencias.ipynb](representarListaDeSecuencias.ipynb)
+
