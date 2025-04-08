@@ -85,6 +85,8 @@ una lista de posiciones en la secuencia de la proteína donde se encuentra el mo
 
 [Resuelto en posicionesDeMotivos.py](posicionesDeMotivos.py)
 
+[Testeado en posicionesDeMotivosTest.py](posicionesDeMotivosTest.py)
+
 ### Desafío VIII
 Dada la siguiente lista de sequencias, realizar el una representación Logo.
 
