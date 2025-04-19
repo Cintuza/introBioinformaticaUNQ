@@ -32,6 +32,13 @@ transcripción tiene lugar en el citoplasma. Por otro lado, los procesos de tran
 ocurren casi simultáneamente.
 
 
+### DESAFÍO II
+Crea un script en Python que tome como argumento una secuencia proteica e imprima una cadena de ARN codificante. 
+Podés usar de ejemplo el siguiente péptido (cadena corta de aminoácidos):
+
+Sec1: ‘ATVEKGGKHKTGPNEKGKKIFVQKCSQCHTVLHGLFGRKTGQA'
+
+[Resuelto en codigoGenetico.py](codigoGenetico.py)
 
 #### Bibliografía utilizada
 Gene expression - Prokaryotes vs. Eukaryotes. (2024, October 13). https://bio.libretexts.org/@go/page/139612 <br>
