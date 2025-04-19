@@ -40,6 +40,13 @@ Sec1: ‘ATVEKGGKHKTGPNEKGKKIFVQKCSQCHTVLHGLFGRKTGQA'
 
 [Resuelto en codigoGenetico.py](codigoGenetico.py)
 
+
+### DESAFÍO III
+Creá un script en Python que, tomando como input un archivo con una secuencia de ADN, permita identificar las 
+regiones promotoras de un gen, considerando que tal región comienza y termina con la caja TATA.
+
+[Resuelto en regionesPromotoras.py](regionesPromotoras.py)
+
 #### Bibliografía utilizada
 Gene expression - Prokaryotes vs. Eukaryotes. (2024, October 13). https://bio.libretexts.org/@go/page/139612 <br>
 Ramos Cárdenas, I. (2020). Orígenes. Notas acerca del origen y la evolución de la vida. Encuentros en la 
