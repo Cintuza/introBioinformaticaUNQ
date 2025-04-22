@@ -49,6 +49,15 @@ regiones promotoras de un gen, considerando que tal región comienza y termina c
 
 Secuencia de ejemplo obtenida de: https://www.ncbi.nlm.nih.gov/nuccore/BC107491.1
 
+
+### DESAFÍO IV
+Diseñá un juego rpg interactivo sobre la expresión génica que se muestre en la consola (que se ejecute mediante 
+CLI de manera similar a lo visto en el Bashaton). Tené en cuenta que lo vas a tener que compartir con la clase.
+
+[Resuelto en juegoExpresionGenica.py](juegoExpresionGenica.py)
+
+
+
 #### Bibliografía utilizada
 Gene expression - Prokaryotes vs. Eukaryotes. (2024, October 13). https://bio.libretexts.org/@go/page/139612 <br>
 Ramos Cárdenas, I. (2020). Orígenes. Notas acerca del origen y la evolución de la vida. Encuentros en la 
