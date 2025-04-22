@@ -47,6 +47,8 @@ regiones promotoras de un gen, considerando que tal región comienza y termina c
 
 [Resuelto en regionesPromotoras.py](regionesPromotoras.py)
 
+Secuencia de ejemplo obtenida de: https://www.ncbi.nlm.nih.gov/nuccore/BC107491.1
+
 #### Bibliografía utilizada
 Gene expression - Prokaryotes vs. Eukaryotes. (2024, October 13). https://bio.libretexts.org/@go/page/139612 <br>
 Ramos Cárdenas, I. (2020). Orígenes. Notas acerca del origen y la evolución de la vida. Encuentros en la 
