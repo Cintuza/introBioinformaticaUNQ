@@ -1,3 +1,4 @@
+import proteina2
 """
 Juego muy simple donde quien juega sigue el camino de la ARN polimerasa y del ARN mensajero para explicar el proceso
 de expresión génica, es decir, la síntesis de una proteína.
@@ -182,6 +183,7 @@ def finalizarTraduccion():
             respuesta = input(
                 "Lo siento, no existe la opción indicada! Ingresá A si crees que el ribosoma da la señal de fin, "
                 "o ingresá B si crees que vos como cadena de ARN mensajero das la señal de fin:  \n")
+    proteina2.imprimirProteinaFinal()
     print((
               "\nFelicitaciones!! Al dar la señal de fin de la traducción con un codón de finalización, haz logrado "
               "terminar el proceso de sintetizar la proteína :) Te esperamos para la próxima expresión génica!!"))
