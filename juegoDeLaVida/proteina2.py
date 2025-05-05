@@ -1,5 +1,5 @@
 def imprimirProteinaFinal():
-    print("""\
+    print("""\033[1;34m\
     
                                +         +#=             ++=+++           
                               #  *     ++  +        =+= #%%% #*=          
@@ -36,5 +36,5 @@ def imprimirProteinaFinal():
                                              ***#* #***                   
                                               #+ +#**                     
                                                *###                       
-    
+    \033[0m
     """)
