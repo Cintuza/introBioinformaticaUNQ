@@ -54,8 +54,8 @@ Secuencia de ejemplo obtenida de: https://www.ncbi.nlm.nih.gov/nuccore/BC107491.
 Diseñá un juego rpg interactivo sobre la expresión génica que se muestre en la consola (que se ejecute mediante 
 CLI de manera similar a lo visto en el Bashaton). Tené en cuenta que lo vas a tener que compartir con la clase.
 
-[Resuelto en juegoExpresionGenica.py](juegoExpresionGenica.py)
-
+[Resuelto en juegoExpresionGenica.py](juegoExpresionGenica.py)<br>
+[Documentación en juegoExpresionGenica.md](juegoExpresionGenica.md)
 
 
 #### Bibliografía utilizada
