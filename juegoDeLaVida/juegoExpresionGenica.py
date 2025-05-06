@@ -12,7 +12,30 @@ def main():
     nuevoJuego.iniciarJuego()
 
 class JuegoExpresionGenica:
-    cantidadTotalPreguntas = 8
+    def __init__(self):
+        self.ultimaRespuestaEsCorrecta = True
+        self.cantidadTotalPreguntas = 8
+        self.respuestasCorrectas = 0
+
+    @property
+    def ultimaRespuestaEsCorrecta(self):
+        return self._ultimaRespuestaEsCorrecta
+
+    @ultimaRespuestaEsCorrecta.setter
+    def ultimaRespuestaEsCorrecta(self, valor):
+       self._ultimaRespuestaEsCorrecta = valor
+
+    @property
+    def respuestasCorrectas(self):
+        return self._respuestasCorrectas
+
+    @respuestasCorrectas.setter
+    def respuestasCorrectas(self, respuestas):
+        self._respuestasCorrectas = respuestas
+
+    def getCantidadTotalPreguntas(self):
+        return self.cantidadTotalPreguntas
+
 
     def iniciarJuego(self):
         print(
@@ -35,6 +58,7 @@ class JuegoExpresionGenica:
         while respuesta != "B":
             self.chequearSalida(respuesta)
             if respuesta == "A":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "Oh no! El ADN se encuentra tan enrrollado en las proteínas histonas que es imposible realizar "
                     "la transcripción. ¿Qué harías?\n")
@@ -46,6 +70,7 @@ class JuegoExpresionGenica:
 
 
     def encontrarGen(self):
+        self.actualizarContadorConRespuestaCorrecta()
         respuesta = input(
             "\nBien! Ahora que la hélice está extendida, debes encontrar dentro de la hebra molde del ADN el gen que "
             "te dará la información necesaria para la proteína que querés sintetizar. ¿Qué hacés a continuación? "
@@ -54,6 +79,7 @@ class JuegoExpresionGenica:
         while respuesta != "A":
             self.chequearSalida(respuesta)
             if respuesta == "B":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "Parece que la suerte no logrará la expresión génica! Ingresá A para buscar la región promotora que "
                     "da inicio al gen que estás buscando, o ingresa B para intentar plegarte en cualquier lugar de la "
@@ -66,6 +92,7 @@ class JuegoExpresionGenica:
 
 
     def corroborarCorrespondenciaNucleotidos(self):
+        self.actualizarContadorConRespuestaCorrecta()
         respuesta = input(
             "\nGenial, encontraste la región promotora y por lo tanto el inicio del gen cuyos nucleótidos debes "
             "transcribir. Antes de seguir, corroboramos que sepas cómo vas a hacer la transcripción! \033[1;35mPor ejemplo, si una "
@@ -74,6 +101,7 @@ class JuegoExpresionGenica:
         while respuesta != "B":
             self.chequearSalida(respuesta)
             if respuesta == "A":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "Dale una revisión a tus conocimientos sobre transcripción e intentalo de nuevo! Si la secuencia de "
                     "la hebra molde del ADN a transcribir es 'ACCATCAG', ¿cuál de las siguientes secuencias de ARN es "
@@ -86,6 +114,7 @@ class JuegoExpresionGenica:
 
 
     def iniciarTranscripcion(self):
+        self.actualizarContadorConRespuestaCorrecta()
         respuesta = input(
             "\nExcelente! Los nucleótidos timina de ADN deben ser sustituídos por nucleótidos uracilo de ARN. Entonces, "
             "sabes cómo transcribir los nucléotidos, y encontraste la región promotora para empezar la transcripción. "
@@ -95,6 +124,7 @@ class JuegoExpresionGenica:
         while respuesta != "B":
             self.chequearSalida(respuesta)
             if respuesta == "A":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "Parece que el intento de guardar vos misma los nucleótidos no funciona! Intentá de nuevo, ¿querés "
                     "llevar vos misma la información del gen hasta la próxima etapa (opción A) o preferís sintentizar una "
@@ -111,14 +141,15 @@ class JuegoExpresionGenica:
             "sus pasos! \033[0m\n")
         self.encontrarRibosoma()
 
-
     def encontrarRibosoma(self):
+        self.actualizarContadorConRespuestaCorrecta()
         respuesta = input(
             "\nComo ARN mensajero, debes encontrar un ribosoma, que construirá la proteína en base a la información "
             "que llevás. \033[1;35mEscribí A para salir del núcleo celular, o B para buscar un ribosoma dentro del núcleo. \033[0m\n")
         while respuesta != "A":
             self.chequearSalida(respuesta)
             if respuesta == "B":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "¡Encontrar un ribosoma en el núcleo está difícil! Escribí A para salir del núcleo celular, o B "
                     "para seguir busando un ribosoma dentro del núcleo. \n")
@@ -130,6 +161,7 @@ class JuegoExpresionGenica:
 
 
     def ingresarAlRibosoma(self):
+        self.actualizarContadorConRespuestaCorrecta()
         respuesta = input(
             "\nSaliste del núcleo y encontraste un ribosoma! Allí transcurrirá la traducción y síntesis de la proteína. "
             "El ribosoma posee una subunidad grande y una subunidad pequeña entre las cuales irás avanzando para que se "
@@ -139,6 +171,7 @@ class JuegoExpresionGenica:
         while respuesta != "B":
             self.chequearSalida(respuesta)
             if respuesta == "A":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "¡Empezar al inicio de tu cadena sin revisar antes genera un error! Escribí A para que el ribosoma "
                     "siga intentando arrancar al principio de tu cadena, o B para que busque un codón de inicio dentro "
@@ -151,6 +184,7 @@ class JuegoExpresionGenica:
 
 
     def buscarARNDeTraduccion(self):
+        self.actualizarContadorConRespuestaCorrecta()
         respuesta = input(
             "\n¡Así es! Existe un codón de inicio, generalmente el primer triplete de nucleótidos AUG, que indica dónde "
             "iniciará la secuencia peptídica; al ser AUG, el primer aminoácido especificado es la metionina. Pero "
@@ -160,6 +194,7 @@ class JuegoExpresionGenica:
         while respuesta != "B":
             self.chequearSalida(respuesta)
             if respuesta == "A":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "¡Ninguna otra organela parece querer hacer el trabajo! Indica A si quieres seguir buscando otra "
                     "organela, o B si crees que será el ARN de transferencia:  \n")
@@ -171,6 +206,7 @@ class JuegoExpresionGenica:
 
 
     def finalizarTraduccion(self):
+        self.actualizarContadorConRespuestaCorrecta()
         respuesta = input(
             "\nExacto! El ARN de transferencia posee por un lado un anticodón que se complementa con uno de tus codones, "
             "y en el extremo opuesto el aminoácido que corresponde a dicho codón. Mientras la subunidad pequeña del "
@@ -182,6 +218,7 @@ class JuegoExpresionGenica:
         while respuesta != "B":
             self.chequearSalida(respuesta)
             if respuesta == "A":
+                self.actualizarContadorConRespuestaIncorrecta()
                 respuesta = input(
                     "¡Parece que el ribosoma no encuentra forma de indicar el fin de la traducción! Ingresá A para que "
                     "el ribosoma siga intentando dar la señal de fin, o ingresá B si crees que vos como cadena de "
@@ -190,14 +227,31 @@ class JuegoExpresionGenica:
                 respuesta = input(
                     "Lo siento, no existe la opción indicada! Ingresá A si crees que el ribosoma da la señal de fin, "
                     "o ingresá B si crees que vos como cadena de ARN mensajero das la señal de fin:  \n")
+        self.actualizarContadorConRespuestaCorrecta()
         proteina2.imprimirProteinaFinal()
         print((
                   "\n\033[1;35mFelicitaciones!! Al dar la señal de fin de la traducción con un codón de finalización, haz logrado "
                   "terminar el proceso de sintetizar la proteína :) Te esperamos para la próxima expresión génica!!\033[0m"))
         quit()
 
-
     def chequearSalida(self, respuesta: str):
         if respuesta == "S":
             print("¡Hasta la próxima!")
             quit()
+
+    def mostrarContadorDeRespuestas(self):
+        respuestas = '\033[1;42m'
+        for valor in range(self.respuestasCorrectas):
+            respuestas += ' ' + str(8 - valor)
+        if self.ultimaRespuestaEsCorrecta == False:
+            respuestas += '\033[1;41m ' + str(self.getCantidadTotalPreguntas() - self.respuestasCorrectas)
+        print('\nRespuestas correctas: ' + respuestas + '\033[0m')
+
+    def actualizarContadorConRespuestaCorrecta(self):
+        self.ultimaRespuestaEsCorrecta = True
+        self.respuestasCorrectas += 1
+        self.mostrarContadorDeRespuestas()
+
+    def actualizarContadorConRespuestaIncorrecta(self):
+        self.ultimaRespuestaEsCorrecta = False
+        self.mostrarContadorDeRespuestas()
