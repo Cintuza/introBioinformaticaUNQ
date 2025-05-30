@@ -120,6 +120,80 @@ posibilidades de generar el mismo aminoácido. Por lo tanto, daría
 mayor ponderación respecto a la identidad a aquellos codones que 
 varían en la tercera posición del codón.
 
+### DESAFIO V
+Te proponemos pensar los pasos a seguir en un alineamiento de dos 
+secuencias cortas, teniendo en cuenta una matriz genérica de 
+scoring (puntuación) que contemple las complejidades que estuvimos 
+viendo, es decir que penalice de distinto modo una inserción o 
+deleción, que una discordancia (mismatch) o una coincidencia 
+(match). Escribilos o esquematizalos en un diagrama de flujo.
+
+1) Armamos una matriz cuadrada de orden mxn, con una secuencia 
+en la parte superior por fuera de la matriz como si fuera 
+la primera fila, y la otra secuencia a la izquierda de la matriz 
+como si fuera la primera columna.
+2) Establecemos un valor para las coincidencias, para las 
+discordancias y para los gaps.
+3) En el primer espacio de la matriz a<sub>11</sub> colocamos un 0.
+4) Empezamos a completar la matriz por fila de arriba hacia abajo 
+y de izquierda a derecha; es decir, completaremos a<sub>12</sub>, 
+a<sub>13</sub>, etc. hasta a<sub>1n</sub>, luego la fila siguiente 
+desde a<sub>21</sub> hasta a<sub>2n</sub>, 
+y así con todas las filas hasta a<sub>mn</sub>.
+5) Para cada una de las posiciones siguientes a a<sub>11</sub> 
+tomaremos las macromoléculas correspondientes a esa fila i y 
+columna j y haremos el siguiente cálculo para determinar su 
+valor de comparación:
+- si las dos macromoléculas son iguales, se toma el valor de 
+coincidencia
+- si las dos macromoléculas son diferentes, se toma el valor de 
+discordancia </br>
+</br>
+Ahora se toman los valores de las siguientes posiciones 
+alrededor de la posición a<sub>ij</sub> que se está calculando, 
+a saber:
+- a<sub>i(j-1)</sub> si j-1 != 0 (lo que puede pasar para la primera columna)
+- a<sub>(i-1)(j-1)</sub> si i-1 != 0 y j-1 != 0 (casos de primera fila y columna)
+- a<sub>(i-1)j</sub> si i-1 != 0 (lo que puede pasar para la primera fila)</br>
+</br>
+De esos tres valores, se toma el valor mayor. Sumamos este valor 
+mayor al valor de comparación calculado anteriormente. El resultado 
+es el valor que se coloca en la posición a<sub>ij</sub>.
+
+6) Una vez recorrida toda la matriz y habiendo llegado a la posición 
+a<sub>mn</sub>, desde allí haremos el camino inverso hasta llegar 
+a a<sub>11</sub> evaluando los valores de las posiciones que 
+recorramos. Arrancamos el puntaje del alineamiento, que 
+por ahora es cero, sumando el valor de a<sub>mn</sub>.
+7) Creamos dos conjuntos ordenados, uno para cada secuencia, y 
+agregamos el valor de la macromolécula correspondiente a la fila m 
+y a la columna n a su lista correspondiente.
+8) Evaluamos las posiciones adyacentes a<sub>m(n-1)</sub>, 
+a<sub>(m-1)(n-1)</sub> y a<sub>(m-1)n</sub>. Si hay tres valores 
+diferentes:
+- si la posición con mayor valor es a<sub>(m-1)(n-1)</sub> 
+(es decir en diagonal), se agregan las dos macromoléculas a sus 
+correspondientes conjuntos en la posición que les corresponde 
+en la secuencia. Nos movemos a dicha posición, sumamos el valor 
+de la misma al puntaje del alineamiento y volvemos a efectuar este 
+paso hasta llegar a a<sub>11</sub>.
+- si la posición con mayor valor es a<sub>m(n-1)</sub>, se agrega 
+un gap en la secuencia vertical, y se resta el valor de penalización 
+de gap al puntaje del alineamiento. Nos movemos a dicha posición, 
+sumamos el valor de la misma al puntaje del alineamiento y volvemos 
+a efectuar este paso hasta llegar a a<sub>11</sub>.
+- si la posición con mayor valor es a<sub>(m-1)n</sub>, se agrega 
+un gap en la secuencia horizontal, y se resta el valor de 
+penalización de gap al puntaje del alineamiento. Nos movemos a 
+dicha posición, sumamos el valor de la misma al puntaje del 
+alineamiento y volvemos a efectuar este paso hasta llegar a a<sub>11</sub>.
+9) En caso de que haya empate entre los valores de las posiciones 
+adyacentes evaluadas en el paso 8), deben hacerse dicho paso para 
+cada una de ellas siguiendo todos los caminos, es decir, todos los 
+alineamientos posibles y sus puntajes.
+10) El mejor alineamiento, en el caso de que haya más de uno, será 
+el que tenga el mejor puntaje.
+
 ### DESAFIO VII
 Calculá el E-value y % identidad utilizando el programa
 Blast de la siguiente secuencia input usando 20000 hits, un e-value 
