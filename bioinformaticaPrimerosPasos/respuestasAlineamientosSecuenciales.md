@@ -252,6 +252,7 @@ Score vs % id, Score vs E-value:
 
 VVGGLGGYMLGSAMSRPIIHFGSDYEDRYYRENMHRYPNQVYYRPMDEYSNQNNFVHDCVNITIKQHTVTTTTKGENFTETDVKMMERVVEQMCITQYERESQAYYQRGSSMVLFSSPPVILLISFLIFLIVG
 
+Para esta búsqueda se utilizó la base curada de UNIPROT (SwissProt). 
 La secuencia presentada pertenece a la especie humana, y al introducirla 
 en el programa BLAST nos dice que el porcentaje de identidad es del 100%
 (lo que tiene sentido, ya que el porcentaje de identidad representa la 
@@ -294,3 +295,32 @@ de identidad (es decir la cantidad de matches del alineamiento de una secuencia
 contra la secuencia original) no definen por sí mismos la similitud entre 
 dos secuencias (el score total), sino que es una combinación de ambas junto 
 con otros factores.
+
+### DESAFIO VIII
+Realizá nuevas búsquedas usando la mitad de la secuencia problema 
+y para un cuarto de la secuencia original. Compará los gráficos 
+obtenidos. ¿Qué conclusiones puede sacas?
+
+Para poder comparar, se realizó la búsqueda con los mismos 
+parámetros que la búsqueda anterior (base de datos Swiss-Prot, 
+un e-value de 100 y tomando aquellos hits con un mínimo de 
+70% cobertura). La secuencia entera tiene 133 aminoácidos, la segunda 66 y la 
+tercera 35, y los cortes se realizaron comenzando siempre por el 
+principio de la cadena.
+
+Lo primero que podemos notar es que la segunda y tercera 
+secuencia traen más resultados, pero no muchos más (51, 53 y 57 
+secuencias respectivamente), ya que reducir la cantidad de 
+elementos de la secuencia puede hacer que se reduzcan las 
+coincidencias pero también las discordancias y los gaps.
+
+Los gráficos obtenidos permiten observar más fácilmente que, 
+por ejemplo, la mayor parte de las secuencias se alinean con la 
+secuencia original a partir del octavo elemento de la cadena
+(la primera y segunda cadena tienen menos de cinco coincidencias 
+a partir del primer elemento, mientras que la tercera tiene diez). 
+A pesar de eso, en el gráfico de la tercera cadena (que recordemos 
+es la más corta) podemos ver también que esos diez primeros 
+alineamientos tienen muchas más discordancias que los primeros 
+alineamientos de las otras dos secuencias.
+
