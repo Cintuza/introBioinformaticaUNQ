@@ -324,3 +324,35 @@ es la más corta) podemos ver también que esos diez primeros
 alineamientos tienen muchas más discordancias que los primeros 
 alineamientos de las otras dos secuencias.
 
+### DESAFIO IX
+Utilizando BLAST utilice búsquedas de similitud secuencial 
+para identificar a la siguiente proteína:
+
+MIDKSAFVHPTAIVEEGASIGANAHIGPFCIVGPHVEIGEGTVLKSHVVVNGHTKIGRDNEIYQ
+FASIGEVNQDLKYAGEPTRVEIGDRNRIRESVTIHRGTVQGGGLTKVGSDNLLMINAHIAHDCT
+VGNRCILANNATLAGHVSVDDFAIIGGMTAVHQFCIIGAHVMVGGCSGVAQDVPPYVIAQGNHA
+TPFGVNIEGLKRRGFSREAITAIRNAYKLIYRSGKTLDEVKPEIAELAETYPEVKAFTDFFARS
+TRGLIR
+
+PARA PENSAR: ¿Cuál es la función de la proteína? 
+¿A qué grupo taxonómico pertenece? 
+A un nivel de significancia estadística adecuado, 
+¿cuántas secuencias similares se encuentran?
+
+La proteína es la Acyl-[acyl-carrier-protein]--UDP-N-
+acetylglucosamine O-acyltransferase, y pertenece a la 
+Escherichia coli APEC O1, una enterobacteria. 
+
+Buscando con un e-value de 100 y una cobertura de mínimo 70% en 
+la base de datos Swiss-Prot de UNIPROT, obtenemos 232 
+secuencias. Sin embargo, si bien todas las secuencias tienen un 
+e-value bajo, también tienen un bajo porcentaje de identidad. 
+Si filtramos la búsqueda por aquellos alineamientos que tengan 
+más de un 70% de identidad respecto de la secuencia problema, 
+obtenemos 29 secuencias.
+
+Finalmente, consultando la página de la proteína en UNIPROT 
+(https://www.uniprot.org/uniprotkb/A1A7M5/entry) podemos rescatar 
+que la proteína cumple funciones en la biosíntesis del lípido A, 
+un glicolípido fosforilado que ancla el lipopolisacárido a la 
+membrana externa de la célula (es decir cataliza una reacción química).
