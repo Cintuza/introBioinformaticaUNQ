@@ -1,4 +1,4 @@
-#### PARA PENSAR: 
+#### PARA PENSAR:
 ¿Qué tipo de información se puede extraer de la comparación de 
 secuencias? ¿Cómo esperás que se vea en una comparación?
 
@@ -193,6 +193,55 @@ cada una de ellas siguiendo todos los caminos, es decir, todos los
 alineamientos posibles y sus puntajes.
 10) El mejor alineamiento, en el caso de que haya más de uno, será 
 el que tenga el mejor puntaje.
+
+#### PARA PENSAR: ¿En qué consiste la programación dinámica? ¿Por qué crees que es útil en este caso?
+
+La programación dinámica sirve para optimizar algoritmos, 
+reduciendo su tiempo de ejecución. Esto es útil en estos casos 
+debido al volumen masivo de datos que puede implicar analizar 
+secuencias y sus mejores alineamientos.
+
+### DESAFIO VI
+Utilizando la herramienta interactiva desarrolladas por el Grupo 
+de Bioinformática de Freiburg probá distintos Gap penalties para 
+el ejemplo propuesto y observá lo que ocurre. Interpretando la 
+recursión, explicá con tus palabras de dónde salen los valores 
+de la matriz que se construye. ¡Esquematiza tus conclusiones!
+
+Las secuencias utilizadas fueron:</br>
+AHC-NIRVS</br>
+AICIN-RCK
+
+Y fueron analizadas en https://needleman-wunsch.vercel.app/
+
+Dejando valores de coincidencia = 1, de discordancia = -1, y de 
+gap = -1, el porcentaje de identidad que calcula el sitio es 
+del 44%, y el puntaje de alineamiento es -1. 
+Este valor no cambiar al aumentar la penalización por gaps; es 
+decir, llevarla por ejemplo a -2 o a -3. Sin embargo, dejar la 
+penalización por gap igual a cero, hace que el puntaje de 
+alineamiento sea 4.
+
+La idea de ponderar en el valor de una posición de la matriz 
+no sólo la coincidencia o no de esa posición en la cadena, 
+sino también a sus posiciones adyacentes, tiene que ver con 
+que varias posiciones coincidentes juntas arman una región 
+conservada, es menos posible que esa coincidencia sea azarosa, 
+y en términos evolutivos tiene mucho más valor para ver si dos 
+secuencias son homólogas.
+
+#### PARA PENSAR:
+¿En qué casos serán de utilidad uno u otro tipo de alineamientos? 
+¿Qué limitaciones tendrá cada uno?
+
+La pregunta hace referencia a los alineamientos a pares de 
+secuencias y a los alineamientos múltiples. Los primeros 
+sirven para ver qué tan similares o divergentes son dos 
+secuencias. Los alineamientos múltiples, por otro lado, sirven 
+cuando tenemos una secuencia que no sabemos bien a qué es 
+homóloga, por lo que alinearla con otras muchas secuencias 
+permite encontrar secuencias similares que nos orientes en 
+cuanto a su origen.
 
 ### DESAFIO VII
 Calculá el E-value y % identidad utilizando el programa
