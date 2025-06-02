@@ -356,3 +356,23 @@ Finalmente, consultando la página de la proteína en UNIPROT
 que la proteína cumple funciones en la biosíntesis del lípido A, 
 un glicolípido fosforilado que ancla el lipopolisacárido a la 
 membrana externa de la célula (es decir cataliza una reacción química).
+
+### DESAFIO X
+Realizá una nueva corrida del BLASTp, utilizando la misma 
+secuencia, pero ahora contra la base de datos PDB. ¿Se 
+obtienen los mismos resultados? ¿Qué tipo de resultados 
+(hits) se recuperan? ¿Cuándo nos podría ser útil este modo 
+de corrida?
+
+Al realizar una búsqueda por la secuencia anterior en PDB 
+y en Swiss-Prot con un e-value de 100 y una cobertura mayor 
+al 70%, obtenemos 19 secuencias en la primera base de 
+datos y 232 secuencias en la segunda. Esto se debe a que en 
+PDB encontramos una entrada (un resultado) por proteína, 
+aquella que sea más representativa de todas las secuencias 
+recogidas del mismo tipo. Elegir una base u otra depende de 
+si nuestra secuencia problema está bien definida y queremos 
+alinearla con otras secuencias que también lo estén; si 
+queremos hacer un estudio más amplio que incluya las diferencias 
+entre secuencias de la misma proteína, usaremos Swiss-Prot. 
+Caso contrario, PDB.
